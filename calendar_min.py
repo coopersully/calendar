@@ -8,11 +8,7 @@ def days_in_month(month_int: int, year_int: int) -> int:
     return 29 if (year_int % 4 == 0 and year_int % 100 != 0) or (year_int % 400 == 0) else 28
 def print_month(year: int, month: int, weekday: int) -> None:
     print(f'{month_name(month)} - {year}'.center(33), "\n", "-" * 33, '\nSun  Mon  Tue  Wed  Thu  Fri  Sat\n' + "     " * weekday, end='')
-    num_days = days_in_month(month, year)
-    for i in range(1, num_days + 1):
-        print(f'{str(i).rjust(3)}  ', end='')
-        if (i + weekday) % 7 == 0:
-            print()
+    for i in range(1, days_in_month(month, year) + 1): print(f'{str(i).rjust(3)}  ', end='') if (i + weekday) % 7 != 0 else print(f'{str(i).rjust(3)}  ')
     print('\n')
 if __name__ == "__main__":
     cal_year = int(input("Enter a year for calendar: "))

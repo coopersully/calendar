@@ -1,17 +1,11 @@
 def get_first_day_year(given_day: int = -1) -> int:
-    while 6 < given_day or given_day < 0:
-        given_day = int(input("Enter the first day of the year, (ex. Sunday = 0, Monday = 1, Tuesday = 2, etc.): "))
+    while 6 < given_day or given_day < 0: given_day = int(input("Enter the first day of the year, (ex. Sunday = 0, Monday = 1, Tuesday = 2, etc.): "))
     return given_day
 def month_name(month_int: int) -> str: return {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August", 9: "September", 10: "October", 11: "November", 12: "December"}.get(month_int)
 def days_in_month(month_int: int, year_int: int) -> int:
-    if month_int in (1, 3, 5, 7, 8, 10, 12):
-        return 31
-    if month_int in (4, 6, 9, 11):
-        return 30
-    if (year_int % 4 == 0 and year_int % 100 != 0) or (year_int % 400 == 0):
-        return 29
-    return 28
-def day_abbreviation(weekday: int) -> str: return {0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat"}.get(weekday)
+    if month_int in (1, 3, 5, 7, 8, 10, 12): return 31
+    if month_int in (4, 6, 9, 11): return 30
+    return 29 if (year_int % 4 == 0 and year_int % 100 != 0) or (year_int % 400 == 0) else 28
 def print_month(year: int, month: int, weekday: int) -> None:
     print(f'{month_name(month)} - {year}'.center(33), "\n", "-" * 33, '\nSun  Mon  Tue  Wed  Thu  Fri  Sat\n' + "     " * weekday, end='')
     num_days = days_in_month(month, year)

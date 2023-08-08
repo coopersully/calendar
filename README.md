@@ -1,6 +1,6 @@
 # Calendar Program
 
-This repository contains two Python files for a calendar program, \`calendar.py\`, and its minimized version, \`calendar_min.py\`. The code serves as a solution to the infamous calendar program assignment at the end of the COSC-110: Intro to Programming class at Samford University.
+This repository contains two Python files for a calendar program, `calendar.py`, and its minimized version, `calendar_min.py`. The code serves as a solution to the infamous calendar program assignment at the end of the COSC-110: Intro to Programming class at Samford University.
 
 ## Files Description
 
